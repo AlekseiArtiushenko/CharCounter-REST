@@ -1,7 +1,7 @@
 package ru.artiushenko.charcounterrest.service;
 
 import org.springframework.stereotype.Service;
-import ru.artiushenko.charcounterrest.model.UniqueSymbolsDto;
+import ru.artiushenko.charcounterrest.dto.UniqueSymbolsDto;
 
 import java.util.HashMap;
 import java.util.Map;

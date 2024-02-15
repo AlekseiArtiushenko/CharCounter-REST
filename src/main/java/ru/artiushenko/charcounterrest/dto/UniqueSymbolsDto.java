@@ -1,4 +1,4 @@
-package ru.artiushenko.charcounterrest.model;
+package ru.artiushenko.charcounterrest.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
