@@ -26,7 +26,7 @@ public class UniqueSymbolsController {
     UniqueSymbolsService uniqueSymbolsService;
 
     @Operation(
-            summary = "Принимает и обрабатывает строки",
+            summary = "Возвращает уникальные символы и их кол-во в отсортированном виде.",
             description = "Принимает в себя значение новой строки," +
                     " обрабатывает строку в Service, возвращает DTO"
     )
@@ -37,7 +37,7 @@ public class UniqueSymbolsController {
             content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                     schema = @Schema(ref = "#/components/schemas/UniqueSymbolsMapDto"))
     )
-    @GetMapping("/parse")
+    @GetMapping(value = {"/parse", "/parse{line}"})
     public ResponseEntity<Map<Character, Integer>> getData(@RequestParam
                                                            @NotEmpty(message = "Line should not be empty.")
                                                            @Pattern(regexp = "^[a-zA-Zа-яА-Я0-9]+$",

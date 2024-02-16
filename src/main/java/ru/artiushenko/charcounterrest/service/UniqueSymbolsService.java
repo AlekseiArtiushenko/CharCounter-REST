@@ -1,10 +1,11 @@
 package ru.artiushenko.charcounterrest.service;
 
 import org.springframework.stereotype.Service;
-import ru.artiushenko.charcounterrest.dto.UniqueSymbolsDto;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class UniqueSymbolsService {
@@ -19,9 +20,11 @@ public class UniqueSymbolsService {
             }
         }
 
-        uniqueSymbolsCountMap.entrySet().stream()
-                .sorted(Map.Entry.<Character, Integer>comparingByValue().reversed());
+        Map<Character, Integer> sortedMap = uniqueSymbolsCountMap.entrySet().stream()
+                .sorted(Map.Entry.<Character, Integer>comparingByValue().reversed())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
 
-        return uniqueSymbolsCountMap;
+        return sortedMap;
     }
 }
