@@ -1,6 +1,7 @@
 package ru.artiushenko.charcounterrest.validation;
 
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.method.annotation.HandlerMethodValidationException;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
+@Slf4j
 @ControllerAdvice
 public class ApiExceptionHandler {
 

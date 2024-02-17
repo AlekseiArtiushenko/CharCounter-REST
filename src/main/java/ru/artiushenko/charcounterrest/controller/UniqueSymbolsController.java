@@ -37,13 +37,12 @@ public class UniqueSymbolsController {
             content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                     schema = @Schema(ref = "#/components/schemas/UniqueSymbolsMapDto"))
     )
-    @GetMapping(value = {"/parse", "/parse{line}"})
+    @GetMapping(value = {"/parse{line}"})
     public ResponseEntity<Map<Character, Integer>> getData(@RequestParam
                                                            @NotEmpty(message = "Line should not be empty.")
                                                            @Pattern(regexp = "^[a-zA-Zа-яА-Я0-9]+$",
                                                                    message = "Line must contain only letters and numbers.")
                                                            String line) {
-
-        return ResponseEntity.ok(uniqueSymbolsService.parseUniqueSymbols(line));
+            return ResponseEntity.ok(uniqueSymbolsService.parseUniqueSymbols(line));
     }
 }

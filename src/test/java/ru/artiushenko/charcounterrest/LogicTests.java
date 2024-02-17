@@ -16,7 +16,7 @@ class LogicTests {
         UniqueSymbolsService uniqueSymbolsService = new UniqueSymbolsService();
         Map<Character, Integer> testMap = uniqueSymbolsService.parseUniqueSymbols(uniqueSymbolsString);
 
-        Assertions.assertEquals(uniqueSymbolsString.length(), testMap.size(), "Размер результата должен быть равен длине строки с уникальными символами");
+        Assertions.assertEquals(3, testMap.size(), "Размер результата должен быть равен длине строки с уникальными символами");
         Assertions.assertEquals(1, testMap.get('s'), "Количество символа 's' должно быть 1");
         Assertions.assertEquals(1, testMap.get('Г'), "Количество символа 'Г' должно быть 1");
         Assertions.assertEquals(2, testMap.get('2'), "Количество символа '2' должно быть 2");
