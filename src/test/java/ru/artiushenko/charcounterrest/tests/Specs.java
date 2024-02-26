@@ -1,4 +1,4 @@
-package ru.artiushenko.charcounterrest.apitests;
+package ru.artiushenko.charcounterrest.tests;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
